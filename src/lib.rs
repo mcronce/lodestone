@@ -1,5 +1,8 @@
 #[allow(unused)]
 
+#[macro_use]
+extern crate strum_macros;
+
 pub mod model;
 pub mod search;
 
