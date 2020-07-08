@@ -1,5 +1,6 @@
 use failure::Fail;
 use std::collections::HashMap;
+use std::collections::hash_map::Iter;
 use std::str::FromStr;
 
 #[derive(Clone, Copy, Debug, Eq, PartialEq)]
@@ -23,5 +24,9 @@ impl Attributes {
     pub fn get(&self, name: &str) -> Option<&Attribute> {
         self.0.get(name)
     }
+
+	pub fn iter(&self) -> Iter<String, Attribute> {
+		self.0.iter()
+	}
 }
 
