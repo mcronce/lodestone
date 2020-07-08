@@ -11,7 +11,7 @@ pub struct ClassTypeParseError(String);
 /// In the case of unlocking a job, the higher level one is preferred.
 /// For example, after unlocking Paladin, the class type will return
 /// Paladin instead of Gladiator.
-#[derive(Clone, Copy, Debug, Eq, PartialEq, Ord, PartialOrd, Hash)]
+#[derive(AsStaticStr, Clone, Copy, Debug, Eq, PartialEq, Ord, PartialOrd, Hash)]
 pub enum ClassType {
     //  Tank
     Paladin,
