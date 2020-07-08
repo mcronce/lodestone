@@ -1,5 +1,6 @@
 use failure::Fail;
 use std::collections::HashMap;
+use std::collections::hash_map::Iter;
 use std::str::FromStr;
 
 #[derive(Clone, Debug, Fail)]
@@ -135,4 +136,8 @@ impl Classes {
     pub fn get(&self, class: ClassType) -> Option<ClassInfo> {
         *self.0.get(&class).unwrap_or(&None)
     }
+
+	pub fn iter(&self) -> Iter<ClassType, Option<ClassInfo>> {
+		self.0.iter()
+	}
 }
