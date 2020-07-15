@@ -140,4 +140,8 @@ impl Classes {
 	pub fn iter(&self) -> Iter<ClassType, Option<ClassInfo>> {
 		self.0.iter()
 	}
+
+	pub fn len(&self) -> usize {
+		self.0.len()
+	}
 }
