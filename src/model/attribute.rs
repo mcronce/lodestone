@@ -1,4 +1,7 @@
+use failure::Fail;
 use std::collections::HashMap;
+use std::collections::hash_map::Iter;
+use std::str::FromStr;
 
 /// Contains all data about an attribute; currently, this only consists of the attribute's level
 #[derive(Clone, Copy, Debug, Default, Eq, PartialEq)]
@@ -24,5 +27,13 @@ impl Attributes {
     pub fn get(&self, name: &str) -> Option<&Attribute> {
         self.0.get(name)
     }
+
+	pub fn iter(&self) -> Iter<String, Attribute> {
+		self.0.iter()
+	}
+
+	pub fn len(&self) -> usize {
+		self.0.len()
+	}
 }
 
